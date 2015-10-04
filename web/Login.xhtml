@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui" >
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+    <h:head>
+        <title>Fundaciòn Rescate Animal</title>
+        <h:outputStylesheet name="./css/style.css"/>
+    </h:head>
+
+    <h:body style="font-size: 12px;
+            font-family: Verdana, 'Verdana CE', Arial, 'Arial CE', 'Lucida Grande CE', lucida, 'Helvetica CE', sans-serif;
+            color: #000000;
+            margin: 10px;">
+
+
+        <h:form style="background: transparent" >
+            #{loginController.inicializar()}
+            <div id="container">
+                <header>         
+                    <center>                           
+                        <img src="./resources/imagenes/Banner-adopciones.jpg" width="1200px" height="350px" />     
+                        <div style="position:absolute; z-index:1; top:110px; left:650px; width:500px; height:50px;" class="tp-caption raslide1">
+                            FUNDACIÓN RESCATE ANIMAL
+                        </div>
+                    </center>
+                </header>
+                <div id="main" style="width: 1206px; height: 220px;">    
+                    <div class="contenedor" id="pagina">
+                            <center>
+                                <h:form>
+                                    <p:growl id="mensaje" showDetail="true"/>
+                                    <div id="mainContenedor" class="clearfix">
+                                        <p:panelGrid styleClass="companyHeaderGrid"  > 
+                                            <p:row>
+                                                <p:column>
+                                                    <label>Usuario</label><br></br>                      
+                                                    <p:inputText id="user" size="42" maxlength="50" value="#{loginController.usuarios.usunombre}" style="margin-top: 15px;border-radius: 4px;"/>
+                                                </p:column>
+                                                <p:column>  </p:column>
+                                            </p:row>
+                                            <p:row>
+                                                <p:column>
+                                                    <label>Contraseña</label><br></br>                        
+                                                    <p:password id="pass" size="42" maxlength="10" value="#{loginController.usuarios.usuclave}" style="margin-top: 15px; border-radius: 4px;"/>                            
+                                                </p:column>
+                                                <p:column>  
+                                                </p:column>
+                                            </p:row>
+                                            <p:row>
+                                                <p:column>
+                                                    <center>
+                                                        <p:commandButton id="botonIngresar" value="Ingresar" actionListener="#{loginController.ingresar()}" update="mensaje"></p:commandButton>   
+                                                        <p:commandButton id="botonBorrar" type="reset" value="Borrar" rendered="true" ></p:commandButton>
+                                                    </center>
+                                                </p:column>
+                                            </p:row>
+                                        </p:panelGrid>
+                                    </div>
+                                </h:form>
+                            </center>
+                    </div>
+                </div>
+
+                <div id="footer">
+                    <div>
+                        <footer>
+                            <div id="copy">
+                                <br></br>
+                                <p>Rescatado, la mejor raza!  </p>
+                                <br></br><br></br>
+                            </div>                        
+                        </footer>
+                    </div>
+                </div>
+            </div>
+
+        </h:form>  
+        <p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()" />
+
+        <p:dialog widgetVar="statusDialog" modal="true" draggable="false" closable="false" resizable="false" showHeader="false">
+            <p:graphicImage name="./images/loading-bar.gif" />
+        </p:dialog>
+
+    </h:body>
+</html>
+
+

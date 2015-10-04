@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Sistema Rescate Animal</title>
+        <h:outputStylesheet name="./css/default.css"  />
+        <h:outputStylesheet name="./css/cssLayout.css"/>
+        <h:outputStylesheet name="./css/navbar.css" />
+    </h:head>
+    <h:body>
+
+        <h:form id="principal">
+            <div id="navbar"> 
+                <ul> 
+                    <li><a>Bienvenido <h:outputText value="#{loginController.usuarios.usunombre}"></h:outputText> </a></li> 
+                    <li><a>Fecha: <h:outputText value="#{session.lastAccessedTime}">
+                                <f:convertDateTime pattern="dd/MM/yyyy" type="date" /></h:outputText> </a></li>
+                    <li><p:commandLink value="Cerrar Sesión" actionListener="#{loginController.cerrarSesion()}" /></li>
+                </ul>                
+            </div>
+
+            <ui:insert name="content">
+            </ui:insert>    
+
+        </h:form>    
+    </h:body>
+
+    <p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()" />
+    <p:dialog widgetVar="statusDialog" modal="true" draggable="false" closable="false" resizable="false" showHeader="false">
+        <img src="../resources/imagenes/load.gif" />
+    </p:dialog>
+</html>

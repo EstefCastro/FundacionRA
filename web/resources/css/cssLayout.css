@@ -1,0 +1,240 @@
+
+#top {
+    position: relative;
+    background-color: #777777;
+    color: #777777;
+    padding: 40px;
+    margin-top: 0px;
+    overflow: visible;
+    
+}
+
+#bottom {
+    position: relative;
+    background-color: #ffffff;
+    padding: 5px;
+    margin: 10px 0px 0px 0px;
+}
+
+#left {
+    float: left;
+    background-color: #ffffff;
+    padding: 5px;
+    width: 900px;
+}
+
+#right {
+    float: right;
+    background-color: #ffffff;
+    padding: 5px;
+    width: 900px;
+}
+
+.center_content {
+    position: relative;
+    background-color: #ffffff;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 5px; 
+    margin-left: 70px;
+    margin-right: 300px;
+}
+
+.left_content {
+    background-color: #ffffff;
+    padding: 5px;
+    margin-left: 170px;
+}
+
+.right_content {
+    background-color: #ffffff;
+    padding: 5px;
+    margin: 0px 170px 0px 170px;
+}
+
+#top a:link, #top a:visited {
+  color: white;
+  font-weight : bold;
+  text-decoration: none;
+}
+
+#top a:link:hover, #top a:visited:hover  {
+  color: black;
+  font-weight : bold;
+  text-decoration : underline;
+}
+
+.companyHeaderGrid tr, .companyHeaderGrid td {
+    border: none;
+    background-color: transparent; 
+    background: none;
+    /* font-family: "Century Gothic",sans-serif !important; */
+}
+
+.column2{
+    margin-left: 0px; 
+}
+.column3{
+    margin-left: 10px;
+}
+
+.span8 {
+width: 770px;
+}
+
+.span18
+{
+    width:950+px;
+}
+
+#page {
+margin-top: 50px;
+margin-bottom: 5px;
+background: white;
+}
+
+.container {
+width: 1024px;
+}
+
+.container {
+margin-right: auto;
+margin-left: auto;
+}
+.container_cotizacion {
+width: 1200px;
+margin-right: 250px;
+margin-left: 200px;
+background-color: transparent;
+}
+
+.ui-widget-content .CrearCliente{
+width: 140px;
+height: 30px;
+background: url('/cotizador_ecuasuiza/imagenes/CrearCliente.png') no-repeat;
+cursor: pointer;
+text-indent: -5000px;
+border: none;
+margin-left: 0% !important;
+}
+
+.ui-widget-content .Regresar{
+width: 140px;
+height: 30px;
+background: url('/cotizador_ecuasuiza/imagenes/Regresar.png') no-repeat;
+cursor: pointer;
+text-indent: -5000px;
+border: none;
+margin-left: 0% !important;
+}
+
+
+.label {
+        margin-bottom: 4px;
+        font-family: "Century Gothic",sans-serif;
+}
+
+.tab{
+    color: #D20005;
+    font-size: 1.5em;
+    font-weight: normal;
+    background-color: #ffffff;
+    border-bottom:2px dotted #969696;
+    text-decoration:none;
+    line-height: 28px;
+}
+
+.commandButton {
+width: 95px;
+height: 32px;
+cursor: pointer;
+text-indent: -5000px;
+border: none;
+margin-left: 0% !important;
+margin-top: 10px;
+}
+
+
+.Text{
+    background: #b9b2a8
+}
+
+div.breadcrumbs {
+font-size: 0.9em;
+border-bottom: 4px solid #D20005;
+margin-bottom: 15px;
+}
+
+div.breadcrumbs_cotizacion {
+font-size: 0.9em;
+border-bottom: 4px solid #D20005;
+margin-bottom: 15px;
+margin-top: -10px;
+}
+
+.home-icon,.hogar-title{
+    float: left;
+}
+
+.home-icon{
+    margin: 2.2%;
+}
+
+#cont-hogar h2 {
+color: #900;
+font-size: 1.5em;
+font-weight: normal;
+border-bottom: 1px dotted #969696;
+line-height: 28px;
+}
+
+.clear {
+clear: both;
+}
+
+#cont-hogar h3 {
+color: #D20005;
+font-size: 16px;
+font-weight: normal;
+border-bottom: 1px dotted #969696;
+line-height: 28px;
+}
+
+.outp{
+    font-family: "Century Gothic",sans-serif;
+    font-size: 14px;
+}
+
+
+#requerido{
+    color: #D20005; 
+    font-size: 16px;
+}
+
+.ui-selectonemenu-panel { 
+  width: 150px; 
+  
+}
+
+.preformatted { 
+    white-space: pre-wrap; 
+} 
+
+.fixed-size {
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+
+.requerido .ui-selectonemenu-label { 
+    background: pink;
+}
+.norequerido .ui-selectonemenu-list { 
+    background: whitesmoke;
+}
+
+.menucoloresfalta .ui-selectonemenu-label { 
+    background: pink;
+}
+.panelcoloreslisto .ui-selectonemenu-list { 
+    background: whitesmoke;
+}

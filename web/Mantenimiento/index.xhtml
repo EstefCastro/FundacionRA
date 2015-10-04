@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui" >
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+    <h:head>
+        <title>Fundaciòn Rescate Animal</title>
+        <h:outputStylesheet name="./css/style.css"/>
+    </h:head>
+    <h:body style="font-size: 12px;
+            font-family: Verdana, 'Verdana CE', Arial, 'Arial CE', 'Lucida Grande CE', lucida, 'Helvetica CE', sans-serif;
+            color: #000000;
+            margin: 10px;">
+
+        <h:form style="background: transparent" >
+            <div id="container">
+                <header class="clearfix">
+                    <div id="headerNav">
+                        <nav>
+                            <ul id="global" class="clearfix">
+                                <li><p:commandLink value="Cerrar Sesión" actionListener="#{loginController.cerrarSesion()}" class="nav-item"  /></li>
+                                <li><p:commandLink value="Usuario: #{loginController.usuarios.usunombre}" class="nav-item"  /></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </header>
+                <header>         
+                    <center>                           
+                        <img src="../resources/imagenes/Banner-adopciones.jpg" width="1200px" height="350px" />  
+                        <div style="position:absolute; z-index:1; top:110px; left:650px; width:500px; height:50px;" class="tp-caption raslide1">
+                            FUNDACIÓN RESCATE ANIMAL
+                        </div>
+                    </center>
+                </header>
+                #{menuController.init()}
+                <div id="main" style="width: 1200px; height: 180px;">  
+                    <div>
+                        <div id="navigation" style="margin-top: 0px; margin-left: 0px">
+                            <div>
+                                <center>
+                                    <div>
+                                        <p:growl id="messages"/>
+                                        <p:menubar autoDisplay="false" model="#{menuController.menubar}" styleClass="ui-menu">
+                                        </p:menubar>
+                                    </div>
+                                </center>
+                            </div>
+                        </div>
+                    </div>               
+                    <div class="contenedorbody" id="pagina">
+                        <h:form>
+                            <br></br>
+                            <br></br>
+                            <h2>Misión </h2>
+                            Rescatar de la fauna urbana callejera, educar a la comunidad hasta generar un cambio social permanente que se transforme en Bienestar Animal para todas las especies de nuestro país, aportando con esto a la consecusión del Buen Vivir.
+                            <br></br>
+                            <h2>Visión </h2>
+                            Ser activistas en movimiento permanente y en constante lucha por los derechos animales, comprometidos con lograr un cambio cultural en nuestra sociedad para lograr el verdadero bienestar animal.
+                        </h:form>
+                    </div>
+                </div>    
+                <div id="footer">
+                    <div>
+                        <footer>
+                            <div id="copy">
+                                <br></br>
+                                <p>Rescatado, la mejor raza!  </p>
+                                <br></br><br></br>
+                            </div>                        
+                        </footer>
+                    </div>
+                </div>
+            </div> 
+        </h:form>  
+
+        <p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()" />
+
+        <p:dialog widgetVar="statusDialog" modal="true" draggable="false" closable="false" resizable="false" showHeader="false">
+            <p:graphicImage name="./images/loading-bar.gif" />
+        </p:dialog>
+
+    </h:body>
+</html>

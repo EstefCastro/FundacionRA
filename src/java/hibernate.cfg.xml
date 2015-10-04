@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/rescateanimal</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">root</property>
+    <property name="hibernate.connection.autocommit">false</property>
+    <property name="hibernate.show_sql">false</property>
+    <mapping class="com.ra.model.Prueba"/>
+    <mapping class="com.ra.model.TblRaAdopcion"/>
+    <mapping class="com.ra.model.TblRaAreaVolun"/>
+    <mapping class="com.ra.model.TblRaEstMascota"/>
+    <mapping class="com.ra.model.TblRaExperVolun"/>
+    <mapping class="com.ra.model.TblRaHogarTemp"/>
+    <mapping class="com.ra.model.TblRaHorarioVolun"/>
+    <mapping class="com.ra.model.TblRaInfMedica"/>
+    <mapping class="com.ra.model.TblRaMascotas"/>
+    <mapping class="com.ra.model.TblRaOpciones"/>
+    <mapping class="com.ra.model.TblRaPersona"/>
+    <mapping class="com.ra.model.TblRaRescate"/>
+    <mapping class="com.ra.model.TblRaRolOpcion"/>
+    <mapping class="com.ra.model.TblRaRolUsuario"/>
+    <mapping class="com.ra.model.TblRaRoles"/>
+    <mapping class="com.ra.model.TblRaTipoFuncion"/>
+    <mapping class="com.ra.model.TblRaUsuarios"/>
+    <mapping class="com.ra.model.TblRaVoluntariado"/>
+  </session-factory>
+</hibernate-configuration>
+

@@ -1,0 +1,84 @@
+<ui:composition template="../Template/LayoutTrans.xhtml" 
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <ui:define name="content">
+        <br></br>
+        <br></br>
+        <h:form id="principal">
+            <p:growl id="mensaje" sticky="false" showDetail="true"/>
+            <div class="container" id="page">
+                <div class="span8" id="cont-hogar">
+                    <div class="home-icon">
+                        <img src="../resources/imagenes/RA_educacion_icon.png" width="54px" height="54px"></img>
+                    </div>
+                    <div class="hogar-title">
+                        <h2>Ingreso De Roles</h2>
+                    </div>
+                </div>
+                <div class="clear"></div>
+
+                <div class="breadcrumbs"></div>
+                 #{menuController.init()}
+                    <p:growl id="messages"/>
+                    <p:menubar autoDisplay="false" model="#{menuController.menubar}" style="background: transparent; border: none">
+                    </p:menubar>
+                <div id="content" >
+
+                    
+                    <p:accordionPanel id="acp">
+                        <p:tab title="Sección Consulta">
+                            <p:dataTable id="datosConsulta" emptyMessage="No existen datos para la consulta" 
+                                         value="#{rolController.listaRoles}" var="rol" 
+                                         styleClass="ui-widget-content"
+                                         rows="5"
+                                         paginator="true"
+                                         paginatorPosition="top"
+                                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                                         rowsPerPageTemplate="5,10,15">
+                                <p:column headerText="Nombre del rol" style="width: 10px;">
+                                    <h:outputText value="#{rol.rolnombre}" />
+                                </p:column>
+                                <p:column headerText="Estado" style="width: 10px">
+                                    <h:outputText value="#{rol.rolestado=='ACT' ? 'ACTIVO':'INACTIVO'}" />
+                                </p:column>
+                                <p:column headerText="Modificar" style="width: 10px; text-align: center">
+                                    <p:commandButton icon="ui-icon-document" actionListener="#{rolController.modifica(rol)}" update=":principal:principal:panelIngreso" oncomplete="PF('dlgIngreso').show();"/>
+                                </p:column>
+                                <p:column headerText="Eliminar" style="width: 10px; text-align: center">
+                                    <p:commandButton icon="ui-icon-trash" actionListener="#{rolController.eliminar(rol)}" update="datosConsulta,:principal:principal:mensaje"/>
+                                </p:column>
+                            </p:dataTable>
+                            <br></br>
+                            <div style="text-align: left">
+                                <p:commandButton value="Nuevo" actionListener="#{rolController.nuevo()}" oncomplete="PF('dlgIngreso').show();" update=":principal:principal:panelIngreso" />
+                            </div>
+                            <br></br>
+                        </p:tab>
+                    </p:accordionPanel>    
+
+                    <p:dialog widgetVar="dlgIngreso" width="800px" showEffect="fade" hideEffect="fade" closable="false" modal="true" resizable="false">
+                        <h:panelGrid columns="5" style="width: 700px" id="panelIngreso">
+                            <h:column>
+                                <h:outputText value="Nombre del rol" /><h:outputText value="*" style="color:red;"/>
+                            </h:column>
+                            <p:inputText value="#{rolController.rol.rolnombre}" onchange="this.value = mayuscula(this.value)" style="width: 200px" maxlength="100"/>
+                            <h:outputText value="Estado" />
+                            <p:selectOneMenu value="#{rolController.rol.rolestado}" filter="true" filterMatchMode="startsWith" style="width: 209px">
+                                <f:selectItem itemLabel="ACTIVO" itemValue="ACT" />
+                                <f:selectItem itemLabel="INACTIVO" itemValue="INA" />
+                            </p:selectOneMenu>
+                        </h:panelGrid>
+                        <br></br>
+                        <div style="text-align: left">
+                            <p:commandButton value="Grabar" actionListener="#{rolController.grabar()}"  update=":principal:principal:mensaje,:principal:principal:acp:datosConsulta"/>
+                            <p:commandButton value="Regresar" oncomplete="PF('dlgIngreso').hide();"/>
+                        </div>
+                    </p:dialog>
+                </div>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>

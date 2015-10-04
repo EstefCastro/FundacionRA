@@ -1,0 +1,34 @@
+<ui:composition template="../Template/LayoutTrans.xhtml" 
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <ui:define name="content">
+        <br></br>
+        <br></br>
+        <h:form>
+            <div class="container" id="page">
+                <div class="span8" id="cont-hogar">
+                    <div class="home-icon">
+                        <img src="../resources/imagenes/RA_educacion_icon.png" width="54px" height="54px"></img>
+                    </div>
+                    <div class="hogar-title">
+                        <h2>Ingreso De Caso</h2>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="breadcrumbs"></div>
+                
+                    #{menuController.init()}
+                    <p:growl id="messages"/>
+                    <p:menubar autoDisplay="false" model="#{menuController.menubar}" style="background: transparent; border: none">
+                    </p:menubar>
+                
+                <div id="content" >
+
+                </div>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>
